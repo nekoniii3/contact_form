@@ -20,10 +20,16 @@ export function ContactFormComponent() {
     }
   }
 
+  function handleReset() {
+    setIsSubmitted(false)
+  }
+
   if (isSubmitted) {
     return (
-      <div className="flex justify-center h-screen">
-        <h2 className="text-2xl font-bold">お問い合わせありがとうございました</h2>
+      <div className="text-center space-y-4 mt-20" role="alert" aria-live="polite">
+        <h2 className="text-2xl font-bold">ありがとうございました</h2>
+        <p>お問い合わせを受け付けました。内容を確認次第、ご連絡いたします。</p>
+        <Button onClick={handleReset}>新しい問い合わせをする</Button>
       </div>
     )
   }
